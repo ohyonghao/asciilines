@@ -62,7 +62,7 @@ void asciifile::renderInstr( const Command& command, vector<char>& canvas ){
     }
 }
 void asciifile::renderVertLine( char c, int row, int col, int len, vector<char> &canvas ){
-    for( auto i = h - row; i >= h - len-1 && i >= 0; --i){
+    for( auto i = row; i < h && i < row + len ; ++i){
         canvas[i*w + col ] = c;
     }
 }
