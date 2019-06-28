@@ -7,8 +7,10 @@ This program will write asciilines from tvg files.
 ## Build and Run 
 Build with g++, or your favorite c++ compiler, no guarantee to compile on all machines is given.
 
-[PUT INSTRUCTIONS HERE]
+To build run:
+`make`
 
+The binary will be located in the directory `./build/`
 ```
 ./asciilines <filename>
 ```
