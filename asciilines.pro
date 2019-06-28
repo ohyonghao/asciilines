@@ -4,8 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        Command.cpp \
         asciifile.cpp \
         main.cpp
 
 HEADERS += \
+    Command.h \
     asciifile.h
