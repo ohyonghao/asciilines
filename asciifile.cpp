@@ -55,7 +55,6 @@ void asciifile::renderInstr( const Command& command, vector<char>& canvas ){
         renderHortLine( command.c, row, col, int(command.len), canvas);
         break;
     case 'v':
-        cout << "Print vertical" << command << endl;
         renderVertLine( command.c, row, col, int(command.len), canvas);
         break;
     default:
@@ -64,10 +63,8 @@ void asciifile::renderInstr( const Command& command, vector<char>& canvas ){
 }
 void asciifile::renderVertLine( char c, int row, int col, int len, vector<char> &canvas ){
     for( auto i = h - row; i >= h - len-1 && i >= 0; --i){
-        cout << i * w + col << ' ';
         canvas[i*w + col ] = c;
     }
-    cout << endl;
 }
 void asciifile::renderHortLine( char c, int row, int col, int len, vector<char>& canvas ){
     for( auto j = col; j < col + len && j < w; ++j){
