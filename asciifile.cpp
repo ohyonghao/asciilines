@@ -47,15 +47,18 @@ ostream& asciifile::printImage( ostream& out, const vector<char>& image ){
     return out;
 }
 void asciifile::renderInstr( const Command& command, vector<char>& canvas ){
+    int len = command.len;
     int row = int(command.row < 0 ? 0 : command.row);
     int col = int(command.col < 0 ? 0 : command.col);
 
     switch(command.dir){
     case 'h':
-        renderHortLine( command.c, row, col, int(command.len), canvas);
+        if( command.col < 0 ) len += command.col;
+        renderHortLine( command.c, row, col, len, canvas);
         break;
     case 'v':
-        renderVertLine( command.c, row, col, int(command.len), canvas);
+        if( command.row < 0 ) len += command.row;
+        renderVertLine( command.c, row, col, len, canvas);
         break;
     default:
         throw InvalidInstructionException();
