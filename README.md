@@ -7,6 +7,8 @@ This program will write asciilines from tvg files.
 ## Build and Run 
 Build with g++, or your favorite c++ compiler, no guarantee to compile on all machines is given.
 
+Your enviornment should have a c++17 standard compiler.
+
 To build run:
 `make`
 
